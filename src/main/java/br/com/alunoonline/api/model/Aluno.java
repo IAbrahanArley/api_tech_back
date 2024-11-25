@@ -23,14 +23,14 @@ public class Aluno implements Serializable {
     @JoinColumn(name = "course_id")
     private Curso course;
 
-    public Aluno() {
-    }
-
     public Aluno(Long id, String name, String email, Curso course) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.course = course;
+    }
+
+    public Aluno() {
     }
 
     public Long getId() {
