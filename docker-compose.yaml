@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  # ====================================================================================================================
+  # MYSQL SERVER
+  # ====================================================================================================================
+  mysql-docker:
+    image: mysql:8.0
+    container_name: dev-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: alunoonline
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1234567
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.data/mysql:/var/lib/mysql
+    networks:
+      - dev-network
+
+# ======================================================================================================================
+# REDE
+# ======================================================================================================================
+networks:
+  dev-network:
+    driver: bridge

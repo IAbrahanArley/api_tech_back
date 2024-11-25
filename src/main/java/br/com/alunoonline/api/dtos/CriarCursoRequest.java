@@ -1,15 +1,11 @@
 package br.com.alunoonline.api.dtos;
 
 import br.com.alunoonline.api.enums.CursoTypeEnum;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class CriarCursoRequest {
 
     private String name;
@@ -18,4 +14,36 @@ public class CriarCursoRequest {
 
     private BigDecimal monthlyCost;
 
+    public CriarCursoRequest() {
+    }
+
+    public CriarCursoRequest(String name, CursoTypeEnum type, BigDecimal monthlyCost) {
+        this.name = name;
+        this.type = type;
+        this.monthlyCost = monthlyCost;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CursoTypeEnum getType() {
+        return type;
+    }
+
+    public void setType(CursoTypeEnum type) {
+        this.type = type;
+    }
+
+    public BigDecimal getMonthlyCost() {
+        return monthlyCost;
+    }
+
+    public void setMonthlyCost(BigDecimal monthlyCost) {
+        this.monthlyCost = monthlyCost;
+    }
 }
